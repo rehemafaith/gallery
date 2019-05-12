@@ -6,4 +6,4 @@ def home(request):
 
 
 def about(request):
-    return HttpResponse('photo/zoom.html')  
+    return render(request,'photo/zoom.html')  
