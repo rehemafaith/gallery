@@ -1,9 +1,25 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse,Http404
+from .models import Image
+ 
+
 
 def home(request):
-    return render(request,'photo/photos.html')
+    image = Image.get_images()
+
+    img = {"image":image}
+
+    return render(request,'photo/photos.html',img)
 
 
-def about(request):
-    return render(request,'photo/zoom.html')  
+def search_results(request):
+    if 'image' in request.GET and request.GET["image"]:
+        search_term = request.GET.get("image")
+        searched_images = Image.search_by_category(category)
+        message = f"{category}"
+
+        return render(request, 'photo/search.html',{"message":message,"images": searched_images})
+
+    else:
+        message = "You haven't searched for any images"
+        return render(request, 'photo/search.html',{"message":message})
