@@ -1,4 +1,48 @@
 {% extends 'photo/base.html' %}
+{% load static %}
 {% block content %}
 {{block.super}}
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="label">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+              <img style="width: 100%;" alt="" class="mod-img">
+              <p id="img-desc"></p>
+              <p id="img-location"></p>
+              <p id="img-category"></p>
+          </div>
+          <div class="modal-footer">
+              <input name="" id="url-to-copy" style="position:relative;left:10000px">
+              <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary btn-sm" onclick="copyUrl()">Copy Url</button>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <h1 class=" text-center">Photo Gallery</h1>
+  <div class="row grid flex">
+      {% for image in images%}
+          <!-- <div class="grid-item">
+              <img onclick="showModal('{{image.name}}','{{image.description}}','{{image.photo_image.url}}','{{image.location.name}}','{{image.category.name}}')" class="image" src="{{image.photo_image.url}}">
+          </div> -->
+    <!--Display news Article images  -->
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <img src="{{image.photo_image.url}}" class="img-responsive" alt="Image">
+    </div>
+
+      {% endfor %}
+  </div>
+</div>
+
+
+
+
+    
 {% endblock %}
