@@ -1,15 +1,23 @@
 {% extends 'photo/base.html' %}
 {% block content %}
-  {% if images %}
-  <div class="row grid flex">
-    {% for image in images%}
-        <div class="grid-item">
-            <img onclick="showModal('{{image.name}}','{{image.description}}','{{image.image_url.url}}','{{image.location.name}}','{{image.category.name}}')" class="image" src="{{image.image_url.url}}">
-        </div>
-    {% endfor %}
+  <!-- {% if images %} -->
+  
+      <div class="grid">
+          {% for image in image%}
+            
+          <a data-fancybox href="{{image.image_path.url}}" data-caption="
+          <h3>{{image.name}}</h3>
+          <p>{{image.description}}</p>
+          <p>{{image.category}}</p>
+          <p>{{image.location}}</p>
+          <button type='button' class='btn btn-primary' onclick=CopyFun('{{image.id}}') name='button' >Copy Link</button>">
+          <div class="grid-item">
+              <img src="{{image.photo_image.url}}" class="img-responsive" alt="Image">
+          </div>
+          {% endfor %}
   </div>
-  {%else%}
+  <!-- {%else%}
   <h1>No Images found</h1>
-  {%endif%}
+  {%endif%} -->
 
 {% endblock %}

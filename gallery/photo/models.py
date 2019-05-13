@@ -24,7 +24,7 @@ class Location(models.Model):
 
 class Category(models.Model):
 
-  name= models.CharField(max_length = 30)
+  name = models.CharField(max_length = 30)
   def save_category(self):
 
       self.save()
@@ -77,13 +77,9 @@ class Image(models.Model):
         return cls.objects.all()
 
     @classmethod
-    def search_by_category(cls,category):
-        """
-        This is the method to search images based on a specific category
-        """
-           
-        searched_category = Category.objects.filter(name__icontains  = category)[0]
-        return cls.objects.filter(category_id = searched_category.id)
+    def search_by_category(cls,search_term):
+        image = cls.objects.filter(category__name__icontains=search_term)
+        return image
         
         
     @classmethod

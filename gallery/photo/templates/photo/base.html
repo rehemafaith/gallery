@@ -15,7 +15,9 @@
       {% bootstrap_css %}
       <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     {% endblock %}
-    <script src="../../static/js/masonry.pkgd.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+
   </head>
   <body>
     {%include "navbar.html" %}
@@ -23,21 +25,21 @@
     {% endblock %}
     {% block scripts %}
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+      <script src="/path/to/masonry.pkgd.min.js"></script>
       {% bootstrap_javascript %}
-      <!-- <script>
-        var grid = document.querySelector('.grid');
-
-        var msnry = new Masonry( grid, {
-          itemSelector: '.grid-item',
-          columnWidth: '.grid-sizer',
-          percentPosition: true
+      <script>
+       // init Masonry
+        var $grid = $('.grid').masonry({
+          // options...
         });
-
-        imagesLoaded( grid ).on( 'progress', function() {
-          // layout Masonry after each image loads
-          msnry.layout();
+        // layout Masonry after each image loads
+        $grid.imagesLoaded().progress( function() {
+          $grid.masonry('layout');
         });
-    </script> -->
+        
+    </script>
     {% endblock %}
   </body>
 </html> 

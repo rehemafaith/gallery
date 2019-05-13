@@ -5,11 +5,11 @@ from .models import Image
 
 
 def home(request):
-    image = Image.get_images()
+    image = Image.objects.all()
 
-    img = {"image":image}
+  
 
-    return render(request,'photo/photos.html',img)
+    return render(request,'photo/photos.html',{"image":image})
 
 
 def search_results(request):
