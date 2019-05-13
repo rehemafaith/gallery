@@ -1,4 +1,4 @@
-{% load bootstrap3 %}
+{% load bootstrap4 %}
 {% load static %}
 <!DOCTYPE html> 
 <html>
@@ -15,6 +15,7 @@
       {% bootstrap_css %}
       <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     {% endblock %}
+    <script src="../../static/js/masonry.pkgd.min.js"></script>
   </head>
   <body>
     {%include "navbar.html" %}
@@ -23,6 +24,20 @@
     {% block scripts %}
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       {% bootstrap_javascript %}
+      <!-- <script>
+        var grid = document.querySelector('.grid');
+
+        var msnry = new Masonry( grid, {
+          itemSelector: '.grid-item',
+          columnWidth: '.grid-sizer',
+          percentPosition: true
+        });
+
+        imagesLoaded( grid ).on( 'progress', function() {
+          // layout Masonry after each image loads
+          msnry.layout();
+        });
+    </script> -->
     {% endblock %}
   </body>
 </html> 
