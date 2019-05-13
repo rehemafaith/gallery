@@ -1,6 +1,16 @@
 {% extends 'photo/base.html' %}
 {% block content %}
-  <!-- {% if images %} -->
+<body>
+
+<div class="container">
+
+
+{% if images%}
+     <h2 >Found {{ images|length }} of searched term {{message}}</h2>
+   {% else %}
+     <h2> Found 0 photos for the search term {{message}} </h2>
+   {% endif %}
+  {% if images %}
   
       <div class="grid">
           {% for image in image%}
@@ -16,8 +26,20 @@
           </div>
           {% endfor %}
   </div>
-  <!-- {%else%}
-  <h1>No Images found</h1>
-  {%endif%} -->
-
+  {%else%}
+  <h2>No Images found</h2>
+  {%endif%}
+</div>
+</body>
+<style>
+body{
+  background-image: url('https://images5.alphacoders.com/441/thumb-1920-441135.jpg')
+  
+}
+h2{
+  color:bisque;
+  font-size: 4.0;
+  font-family: 'Press Start 2P', cursive;
+}
+</style>
 {% endblock %}

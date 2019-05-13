@@ -5,24 +5,39 @@
 
 
 <div class="container-fluid">
-  <h1 class=" text-center">Photo Gallery</h1>
-  <div class="grid-sizer"></div>
-    <div class="grid">>
-        {% for image in image%}
-          
-        <a data-fancybox href="{{image.image_path.url}}" data-caption="
-        <h3>{{image.name}}</h3>
-        <p>{{image.description}}</p>
-        <p>{{image.category}}</p>
-        <p>{{image.location}}</p>
-        <button type='button' class='btn btn-primary' onclick=CopyFun('{{image.id}}') name='button' >Copy Link</button>">
-        <div class="grid-item">
-            <img src="{{image.photo_image.url}}" class="img-responsive" alt="Image">
-        </div>
-        {% endfor %}      
+    <div class="jumbotron">
+        <h1 class=" text-center" id="gal">Photo Gallery</h1>
     </div>
-  </div>
+    <div class="container">
+    
+    <div class="row">
+    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+    {% for image in image%}
+
+    <a data-fancybox href="{{image.image_path.url}}" data-caption="
+    <h3>{{image.name}}</h3>
+    <p>{{image.description}}</p>
+    <p>{{image.category}}</p>
+    <p>{{image.location}}</p>
+    <button type='button' class='btn btn-primary' onclick=CopyFun('{{image.id}}') name='button' >Copy Link</button>">
+    
+        <img src="{{image.photo_image.url}}" class="img-responsive" alt="Image">
+   
+
+{% endfor %}  
+    </div>
+    </div>
+    </div>
 </div>
 
-    
+<style>
+#gal{
+  font-family: 'Satisfy', cursive;
+  font-size: 4.0em
+}
+.jumbotron{
+    background-image: url('https://images5.alphacoders.com/441/441135.jpg')
+}
+
+    </style>
 {% endblock %}

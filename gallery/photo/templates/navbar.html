@@ -13,21 +13,21 @@
 
 
 
-<nav class="navbar navbar-expand-sm bg-primary  navbar-light">
+<nav class="navbar navbar-expand-sm  navbar-light" style="background-color: coral;">
   <ul class="navbar-nav">
     <li class="nav-item active">
       <a class="nav-link" href="{%url 'photo-home' %}">Gallery</a>
    
   </ul>
+
+  
   <form class="form-inline" action="{% url 'search_results' %}">
     <input class="form-control mr-sm-2" type="text" placeholder="Search">
     <button class="btn btn-success" type="submit">Search</button>
   </form>
+
 </nav>
 
-
-
-
-
+</style>
 </body>
 </html>

@@ -16,8 +16,7 @@
       <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     {% endblock %}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
-    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P|Satisfy" rel="stylesheet">
   </head>
   <body>
     {%include "navbar.html" %}
@@ -27,19 +26,9 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
       <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-      <script src="/path/to/masonry.pkgd.min.js"></script>
+ 
       {% bootstrap_javascript %}
-      <script>
-       // init Masonry
-        var $grid = $('.grid').masonry({
-          // options...
-        });
-        // layout Masonry after each image loads
-        $grid.imagesLoaded().progress( function() {
-          $grid.masonry('layout');
-        });
-        
-    </script>
+     
     {% endblock %}
   </body>
 </html> 
