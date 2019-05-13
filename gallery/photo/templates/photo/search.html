@@ -1,0 +1,15 @@
+{% extends 'photo/base.html' %}
+{% block content %}
+  {% if images %}
+  <div class="row grid flex">
+    {% for image in images%}
+        <div class="grid-item">
+            <img onclick="showModal('{{image.name}}','{{image.description}}','{{image.image_url.url}}','{{image.location.name}}','{{image.category.name}}')" class="image" src="{{image.image_url.url}}">
+        </div>
+    {% endfor %}
+  </div>
+  {%else%}
+  <h1>No Images found</h1>
+  {%endif%}
+
+{% endblock %}
