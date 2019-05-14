@@ -1,6 +1,6 @@
-#PhotoGallery
+# PhotoGallery
 
-##Project by: Rehema Faith
+## Project by: Rehema Faith
 
 ## Description
 This project was generated using python version 3.6.and the Django framework. This is a gallery application. It allows a user(admin) to post pictures, add locations category and locations for the images. Other users can view the images and search for images based on category.
