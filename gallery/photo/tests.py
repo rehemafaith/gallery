@@ -8,4 +8,4 @@ class LocationTestClass(TestCase):
     self.rehema = Location(name='Africa')
 
     def test_instance(self):
-        self.assertTrue(isinstance(self.rehema,Location)) 
+        self.assertTrue(isinstance(self.rehema,Location))        
