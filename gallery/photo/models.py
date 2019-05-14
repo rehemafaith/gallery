@@ -81,7 +81,7 @@ class Image(models.Model):
         image = cls.objects.filter(category__name__icontains=search_term)
         return image
         
-        
+            
     @classmethod
     def filter_by_location(cls,location):
         """
